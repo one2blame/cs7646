@@ -3,34 +3,33 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>CS 7646: Machine Learning for Trading</title>
-        <meta name="robots" content="noindex" />
+        <title>1-2 - CS 7646: Machine Learning for Trading</title>
         <!-- Custom HTML head -->
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff" />
 
-        <link rel="icon" href="favicon.svg">
-        <link rel="shortcut icon" href="favicon.png">
-        <link rel="stylesheet" href="css/variables.css">
-        <link rel="stylesheet" href="css/general.css">
-        <link rel="stylesheet" href="css/chrome.css">
-        <link rel="stylesheet" href="css/print.css" media="print">
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
         <!-- Fonts -->
-        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
-        <link rel="stylesheet" href="fonts/fonts.css">
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
         <!-- Highlight.js Stylesheets -->
-        <link rel="stylesheet" href="highlight.css">
-        <link rel="stylesheet" href="tomorrow-night.css">
-        <link rel="stylesheet" href="ayu-highlight.css">
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
 
         <!-- Custom theme stylesheets -->
     </head>
     <body>
         <!-- Provide site root to javascript -->
         <script type="text/javascript">
-            var path_to_root = "";
+            var path_to_root = "../";
             var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "ayu" : "ayu";
         </script>
 
@@ -76,7 +75,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="welcome.html">Welcome</a></li><li class="chapter-item expanded "><a href="part1/part1.html"><strong aria-hidden="true">1.</strong> Part 1</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="part1/1-1.html"><strong aria-hidden="true">1.1.</strong> 1-1</a></li><li class="chapter-item expanded "><a href="part1/1-2.html"><strong aria-hidden="true">1.2.</strong> 1-2</a></li></ol></li><li class="chapter-item expanded "><a href="part2/part2.html"><strong aria-hidden="true">2.</strong> Part 2</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="part2/2-1.html"><strong aria-hidden="true">2.1.</strong> 2-1</a></li></ol></li><li class="chapter-item expanded "><a href="part3/part3.html"><strong aria-hidden="true">3.</strong> Part 3</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="part3/3-1.html"><strong aria-hidden="true">3.1.</strong> 3-1</a></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../welcome.html">Welcome</a></li><li class="chapter-item expanded "><a href="../part1/part1.html"><strong aria-hidden="true">1.</strong> Part 1</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../part1/1-1.html"><strong aria-hidden="true">1.1.</strong> 1-1</a></li><li class="chapter-item expanded "><a href="../part1/1-2.html" class="active"><strong aria-hidden="true">1.2.</strong> 1-2</a></li></ol></li><li class="chapter-item expanded "><a href="../part2/part2.html"><strong aria-hidden="true">2.</strong> Part 2</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../part2/2-1.html"><strong aria-hidden="true">2.1.</strong> 2-1</a></li></ol></li><li class="chapter-item expanded "><a href="../part3/part3.html"><strong aria-hidden="true">3.</strong> Part 3</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../part3/3-1.html"><strong aria-hidden="true">3.1.</strong> 3-1</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -108,7 +107,7 @@
                     <h1 class="menu-title">CS 7646: Machine Learning for Trading</h1>
 
                     <div class="right-buttons">
-                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
                             <i id="print-button" class="fa fa-print"></i>
                         </a>
                     </div>
@@ -135,91 +134,31 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="welcome"><a class="header" href="#welcome">Welcome</a></h1>
-<p>This notebook contains my personal notes for CS7646: Machine Learning for
-Trading, offered at the Georgia Institute of Technology. A summary of the course
-follows:</p>
-<blockquote>
-<p>This course introduces students to the real world challenges of implementing
-machine learning based trading strategies including the algorithmic steps from
-information gathering to market orders. The focus is on how to apply
-probabilistic machine learning approaches to trading decisions. We consider
-statistical approaches like linear regression, Q-Learning, KNN, and regression
-trees and how to apply them to actual stock trading situations.</p>
-</blockquote>
-<p>Course links:</p>
-<ul>
-<li><a href="https://omscs.gatech.edu/cs-7646-machine-learning-trading">https://omscs.gatech.edu/cs-7646-machine-learning-trading</a></li>
-</ul>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="part-1"><a class="header" href="#part-1">Part 1</a></h1>
-<p>The following section contains my notes for Part 1 of the course
-&quot;CS 7646: Machine Learning for Trading&quot;. This section of the course covers the
-manipulation of financial data using Python.</p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="1-1-reading-and-plotting-stock-data"><a class="header" href="#1-1-reading-and-plotting-stock-data">1-1: Reading and plotting stock data</a></h1>
-<p>This lesson contains a basic introduction to the manipulation of data using
-Python. Most of the data provided in this course comes in the format of <code>.csv</code>
-files.</p>
-<h2 id="what-does-real-stock-data-look-like"><a class="header" href="#what-does-real-stock-data-look-like">What does real stock data look like?</a></h2>
-<p>Usually, each <code>.csv</code> file containing stock data is named after its respective
-stock symbol. We can expect the following headers in the stock's <code>.csv</code> file:</p>
-<ul>
-<li>Date</li>
-<li>Open</li>
-<li>High</li>
-<li>Low</li>
-<li>Close</li>
-<li>Volume</li>
-<li>Adjusted Close (Adj Close)</li>
-</ul>
-<p>Each <code>.csv</code> file is sorted from newest to oldest record, based upon the <code>Date</code>
-field.</p>
-<h2 id="the-pandas-dataframe"><a class="header" href="#the-pandas-dataframe">The pandas dataframe</a></h2>
-<p><code>pandas</code> is a Python library used to manipulate large sets of data. When
-<code>pandas</code> ingests <code>.csv</code>, it stores the rows and columns in a certain format, or
-dataframe, that allows us to easily access different sets of data
-programmatically. Below is an example drawing from the class of the Pandas
-dataframe, each plane of the dataframe is separated by the headers we listed
-above: <strong>Close</strong>, <strong>Volume</strong>, <strong>Adj Close</strong>, etc.</p>
-<p><img src="part1/./assets/pandas-dataframe.png" alt="pandas-dataframe" /></p>
-<h2 id="quizzes"><a class="header" href="#quizzes">Quizzes</a></h2>
-<h3 id="which-fields-would-you-expect-to-see-in-a-csv-file-of-stock-data"><a class="header" href="#which-fields-would-you-expect-to-see-in-a-csv-file-of-stock-data">Which fields would you expect to see in a <code>.csv</code> file of stock data?</a></h3>
-<ul>
-<li><input disabled="" type="checkbox"/>
-Number of employees</li>
-<li><input disabled="" type="checkbox" checked=""/>
-Date / time</li>
-<li><input disabled="" type="checkbox"/>
-Company name</li>
-<li><input disabled="" type="checkbox" checked=""/>
-Price of the stock</li>
-<li><input disabled="" type="checkbox"/>
-Company's hometown</li>
-</ul>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="1-2-working-with-multiple-stocks"><a class="header" href="#1-2-working-with-multiple-stocks">1-2: Working with multiple stocks</a></h1>
+                        <h1 id="1-2-working-with-multiple-stocks"><a class="header" href="#1-2-working-with-multiple-stocks">1-2: Working with multiple stocks</a></h1>
 <p>This lesson covers more in-depth manipulation of stock data in <code>.csv</code> files with
 <code>pandas</code>. In this lesson, we create empty <code>dataframes</code> with <code>pandas</code> and
 selectively include data from a number of <code>.csv</code> files of different stock
 symbols. This lesson provides examples of selecting stock information based upon
 date ranges from various stock symbols, and provides guidance on how to avoid
 ingesting invalid (<code>NaN</code> values) into the dataframe. An example provided by the
-lesson can be found <a href="part1/./1-2_WorkingWithMultipleStocks.py">here</a>.</p>
+lesson can be found <a href="./1-2_WorkingWithMultipleStocks.py">here</a>.</p>
 <h2 id="inner-join-vs-outer-join"><a class="header" href="#inner-join-vs-outer-join">Inner join vs outer join</a></h2>
 <p>An <strong>inner join</strong> of a table provides the common items between the two tables
 being joined. An example Venn-diagram of the operation is provided below:</p>
-<p><img src="part1/./assets/inner-join.png" alt="inner-join" /></p>
+<p><img src="./assets/inner-join.png" alt="inner-join" /></p>
 <p>An <strong>outer join</strong> of a table provides the common items between two tables, as
 well, however it also provides the left or right quantities of the two tables
 being joined. An example Venn-diagram of a <strong>left outer join</strong> and a
 <strong>right outer join</strong> are provided below:</p>
-<p><img src="part1/./assets/left-outer-join.png" alt="left-outer-join" /></p>
-<p><img src="part1/./assets/right-outer-join.png" alt="right-outer-join" /></p>
+<p><img src="./assets/left-outer-join.png" alt="left-outer-join" /></p>
+<p><img src="./assets/right-outer-join.png" alt="right-outer-join" /></p>
 <h2 id="normalizing-price-data"><a class="header" href="#normalizing-price-data">Normalizing price data</a></h2>
 <p>The preferred method to normalize data within a <code>pandas</code> dataframe is to conduct
 the following operation in Python:</p>
 <pre><code class="language-python">my_dataframe = my_dataframe / mydataframe.ix[0, :]
 </code></pre>
 <h3 id="the-default-method-of-join-for-a-pandas-dataframe-is-the-left-outer-join"><a class="header" href="#the-default-method-of-join-for-a-pandas-dataframe-is-the-left-outer-join">The default method of <code>join</code> for a <code>pandas</code> dataframe is the left outer join.</a></h3>
-<h2 id="quizzes-1"><a class="header" href="#quizzes-1">Quizzes</a></h2>
+<h2 id="quizzes"><a class="header" href="#quizzes">Quizzes</a></h2>
 <h3 id="how-many-days-were-us-stocks-traded-at-nyse-in-2014"><a class="header" href="#how-many-days-were-us-stocks-traded-at-nyse-in-2014">How many days were U.S. stocks traded at NYSE in 2014?</a></h3>
 <ul>
 <li><input disabled="" type="checkbox"/>
@@ -229,27 +168,29 @@ the following operation in Python:</p>
 <li><input disabled="" type="checkbox" checked=""/>
 252</li>
 </ul>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="part-2"><a class="header" href="#part-2">Part 2</a></h1>
-<p>The following section contains my notes for Part 2 of the course
-&quot;CS 7646: Machine Learning for Trading&quot;. This section of the course covers
-computational investing.</p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="2-1"><a class="header" href="#2-1">2-1</a></h1>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="part-3"><a class="header" href="#part-3">Part 3</a></h1>
-<p>The following section contains my notes for Part 3 of the course
-&quot;CS 7646: Machine Learning for Trading&quot;. This section of the course covers
-various algorithms for trading.</p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="3-1"><a class="header" href="#3-1">3-1</a></h1>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../part1/1-1.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                            <a rel="next" href="../part2/part2.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
                         <div style="clear: both"></div>
                     </nav>
                 </div>
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../part1/1-1.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a rel="next" href="../part2/part2.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
             </nav>
 
         </div>
@@ -271,18 +212,13 @@ various algorithms for trading.</p>
         <script type="text/javascript">
             window.playground_copyable = true;
         </script>
-        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
-        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
-        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
 
         <!-- Custom JS scripts -->
-        <script type="text/javascript">
-        window.addEventListener('load', function() {
-            window.setTimeout(window.print, 100);
-        });
-        </script>
     </body>
 </html>
