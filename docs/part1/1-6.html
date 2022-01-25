@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>1-2 - CS 7646: Machine Learning for Trading</title>
+        <title>1-6 - CS 7646: Machine Learning for Trading</title>
         <!-- Custom HTML head -->
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
@@ -75,7 +75,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../welcome.html">Welcome</a></li><li class="chapter-item expanded "><a href="../part1/part1.html"><strong aria-hidden="true">1.</strong> Part 1</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../part1/1-1.html"><strong aria-hidden="true">1.1.</strong> 1-1</a></li><li class="chapter-item expanded "><a href="../part1/1-2.html" class="active"><strong aria-hidden="true">1.2.</strong> 1-2</a></li><li class="chapter-item expanded "><a href="../part1/1-3.html"><strong aria-hidden="true">1.3.</strong> 1-3</a></li><li class="chapter-item expanded "><a href="../part1/1-4.html"><strong aria-hidden="true">1.4.</strong> 1-4</a></li><li class="chapter-item expanded "><a href="../part1/1-5.html"><strong aria-hidden="true">1.5.</strong> 1-5</a></li><li class="chapter-item expanded "><a href="../part1/1-6.html"><strong aria-hidden="true">1.6.</strong> 1-6</a></li></ol></li><li class="chapter-item expanded "><a href="../part2/part2.html"><strong aria-hidden="true">2.</strong> Part 2</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../part2/2-1.html"><strong aria-hidden="true">2.1.</strong> 2-1</a></li></ol></li><li class="chapter-item expanded "><a href="../part3/part3.html"><strong aria-hidden="true">3.</strong> Part 3</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../part3/3-1.html"><strong aria-hidden="true">3.1.</strong> 3-1</a></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../welcome.html">Welcome</a></li><li class="chapter-item expanded "><a href="../part1/part1.html"><strong aria-hidden="true">1.</strong> Part 1</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../part1/1-1.html"><strong aria-hidden="true">1.1.</strong> 1-1</a></li><li class="chapter-item expanded "><a href="../part1/1-2.html"><strong aria-hidden="true">1.2.</strong> 1-2</a></li><li class="chapter-item expanded "><a href="../part1/1-3.html"><strong aria-hidden="true">1.3.</strong> 1-3</a></li><li class="chapter-item expanded "><a href="../part1/1-4.html"><strong aria-hidden="true">1.4.</strong> 1-4</a></li><li class="chapter-item expanded "><a href="../part1/1-5.html"><strong aria-hidden="true">1.5.</strong> 1-5</a></li><li class="chapter-item expanded "><a href="../part1/1-6.html" class="active"><strong aria-hidden="true">1.6.</strong> 1-6</a></li></ol></li><li class="chapter-item expanded "><a href="../part2/part2.html"><strong aria-hidden="true">2.</strong> Part 2</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../part2/2-1.html"><strong aria-hidden="true">2.1.</strong> 2-1</a></li></ol></li><li class="chapter-item expanded "><a href="../part3/part3.html"><strong aria-hidden="true">3.</strong> Part 3</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../part3/3-1.html"><strong aria-hidden="true">3.1.</strong> 3-1</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -134,49 +134,55 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="1-2-working-with-multiple-stocks"><a class="header" href="#1-2-working-with-multiple-stocks">1-2: Working with multiple stocks</a></h1>
-<p>This lesson covers more in-depth manipulation of stock data in <code>.csv</code> files with
-<code>pandas</code>. In this lesson, we create empty <code>dataframes</code> with <code>pandas</code> and
-selectively include data from a number of <code>.csv</code> files of different stock
-symbols. This lesson provides examples of selecting stock information based upon
-date ranges from various stock symbols, and provides guidance on how to avoid
-ingesting invalid (<code>NaN</code> values) into the dataframe. An example provided by the
-lesson can be found <a href="./1-2_WorkingWithMultipleStocks.py">here</a>.</p>
-<h2 id="inner-join-vs-outer-join"><a class="header" href="#inner-join-vs-outer-join">Inner join vs outer join</a></h2>
-<p>An <strong>inner join</strong> of a table provides the common items between the two tables
-being joined. An example Venn-diagram of the operation is provided below:</p>
-<p><img src="./assets/inner-join.png" alt="inner-join" /></p>
-<p>An <strong>outer join</strong> of a table provides the common items between two tables, as
-well, however it also provides the left or right quantities of the two tables
-being joined. An example Venn-diagram of a <strong>left outer join</strong> and a
-<strong>right outer join</strong> are provided below:</p>
-<p><img src="./assets/left-outer-join.png" alt="left-outer-join" /></p>
-<p><img src="./assets/right-outer-join.png" alt="right-outer-join" /></p>
-<h3 id="the-default-method-of-join-for-a-pandas-dataframe-is-the-left-outer-join"><a class="header" href="#the-default-method-of-join-for-a-pandas-dataframe-is-the-left-outer-join">The default method of <code>join</code> for a <code>pandas</code> dataframe is the left outer join.</a></h3>
-<h2 id="normalizing-price-data"><a class="header" href="#normalizing-price-data">Normalizing price data</a></h2>
-<p>The preferred method to normalize data within a <code>pandas</code> dataframe is to conduct
-the following operation in Python:</p>
-<pre><code class="language-python">my_dataframe = my_dataframe / mydataframe.ix[0, :]
-</code></pre>
-<h2 id="quizzes"><a class="header" href="#quizzes">Quizzes</a></h2>
-<h3 id="how-many-days-were-us-stocks-traded-at-nyse-in-2014"><a class="header" href="#how-many-days-were-us-stocks-traded-at-nyse-in-2014">How many days were U.S. stocks traded at NYSE in 2014?</a></h3>
-<ul>
-<li><input disabled="" type="checkbox"/>
-365</li>
-<li><input disabled="" type="checkbox"/>
-260</li>
-<li><input disabled="" type="checkbox" checked=""/>
-252</li>
-</ul>
+                        <h1 id="1-6-histograms-and-scatter-plots"><a class="header" href="#1-6-histograms-and-scatter-plots">1-6: Histograms and scatter plots</a></h1>
+<p>This lesson covers how to utilize histograms and scatter plots to analyze and
+compare daily returns of multiple stocks. This is a more useful technique than
+analyzing a stock by itself.</p>
+<h2 id="daily-returns"><a class="header" href="#daily-returns">Daily returns</a></h2>
+<p>This section discusses what a histogram looks like and what information it
+captures. A high-level representation of a histogram in comparison with a stock
+price and daily returns graph can be found below:</p>
+<p><img src="./assets/daily-returns-histogram.png" alt="daily-returns-historgram" /></p>
+<h2 id="histogram-of-daily-returns"><a class="header" href="#histogram-of-daily-returns">Histogram of daily returns</a></h2>
+<p>In the below example, the lecture discusses the normal shape of a histogram
+which, like most things, is a bell curve. The lecture discusses the concept
+of <strong>kurtosis</strong>, describing <strong>fat tails</strong> and <strong>skinny tails</strong> - a measurement
+of the distribution of the histogram.</p>
+<p><strong>Fat tails</strong> mean that there are a large number of occurrences happening on
+the outer edges of the distribution, meanwhile <strong>skinny tails</strong> indicate the
+opposite. Below is a high-level representation of these concepts:</p>
+<p><img src="./assets/histogram.png" alt="histogram" /></p>
+<h2 id="scatterplots"><a class="header" href="#scatterplots">Scatterplots</a></h2>
+<p>This section discusses how scatterplots are generated to compare two stocks. As
+we can see, general trends begin to form when a scatterplot is generated for
+two stocks, allowing us to infer about the behavior or performance for a
+particular stock. Below is a high-level representation provided by the lecture:</p>
+<p><img src="./assets/scatterplot.png" alt="scatterplot" /></p>
+<h2 id="scatterplot-slopes"><a class="header" href="#scatterplot-slopes">Scatterplot slopes</a></h2>
+<p>In this section of the lecture, <strong>alpha</strong> and <strong>beta</strong> are described for a given
+scatterplot. <strong>alpha</strong> and <strong>beta</strong> are both functions of the slopes of the
+possible lines that can be drawn for a given scatterplot. <strong>Beta</strong> describes
+how reactive a particular stock is to the market. If the market goes up by %1,
+this stock would also achieve %1 - if the <strong>beta</strong> was equal to one. If the
+<strong>beta</strong> was equal to two, the stock would achieve %2 while the market achieved
+%1.</p>
+<p>In a similar vein, we have <strong>alpha</strong> - the intersection between the line we've
+drawn using the scatterplot and the vertical axis. <strong>alpha</strong> describes how a
+stock performs on average better than market making stocks like the S&amp;P500.</p>
+<p>A high-level representation of these concepts is provided below:</p>
+<p><img src="./assets/slopes.png" alt="slopes" /></p>
+<h2 id="correlation"><a class="header" href="#correlation">Correlation</a></h2>
+<p><strong>Correlation</strong> is a measurement of how close the dots on a scatterplot are to
+the line we've drawn through the scatterplot.</p>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="../part1/1-1.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../part1/1-5.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
-                            <a rel="next" href="../part1/1-3.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next" href="../part2/part2.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
                         <div style="clear: both"></div>
@@ -185,10 +191,10 @@ the following operation in Python:</p>
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="../part1/1-1.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="../part1/1-5.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
-                    <a rel="next" href="../part1/1-3.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next" href="../part2/part2.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>
