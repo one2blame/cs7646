@@ -76,7 +76,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="welcome.html">Welcome</a></li><li class="chapter-item expanded "><a href="part1/part1.html"><strong aria-hidden="true">1.</strong> Part 1</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="part1/1-1.html"><strong aria-hidden="true">1.1.</strong> 1-1</a></li><li class="chapter-item expanded "><a href="part1/1-2.html"><strong aria-hidden="true">1.2.</strong> 1-2</a></li><li class="chapter-item expanded "><a href="part1/1-3.html"><strong aria-hidden="true">1.3.</strong> 1-3</a></li><li class="chapter-item expanded "><a href="part1/1-4.html"><strong aria-hidden="true">1.4.</strong> 1-4</a></li></ol></li><li class="chapter-item expanded "><a href="part2/part2.html"><strong aria-hidden="true">2.</strong> Part 2</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="part2/2-1.html"><strong aria-hidden="true">2.1.</strong> 2-1</a></li></ol></li><li class="chapter-item expanded "><a href="part3/part3.html"><strong aria-hidden="true">3.</strong> Part 3</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="part3/3-1.html"><strong aria-hidden="true">3.1.</strong> 3-1</a></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="welcome.html">Welcome</a></li><li class="chapter-item expanded "><a href="part1/part1.html"><strong aria-hidden="true">1.</strong> Part 1</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="part1/1-1.html"><strong aria-hidden="true">1.1.</strong> 1-1</a></li><li class="chapter-item expanded "><a href="part1/1-2.html"><strong aria-hidden="true">1.2.</strong> 1-2</a></li><li class="chapter-item expanded "><a href="part1/1-3.html"><strong aria-hidden="true">1.3.</strong> 1-3</a></li><li class="chapter-item expanded "><a href="part1/1-4.html"><strong aria-hidden="true">1.4.</strong> 1-4</a></li><li class="chapter-item expanded "><a href="part1/1-5.html"><strong aria-hidden="true">1.5.</strong> 1-5</a></li></ol></li><li class="chapter-item expanded "><a href="part2/part2.html"><strong aria-hidden="true">2.</strong> Part 2</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="part2/2-1.html"><strong aria-hidden="true">2.1.</strong> 2-1</a></li></ol></li><li class="chapter-item expanded "><a href="part3/part3.html"><strong aria-hidden="true">3.</strong> Part 3</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="part3/3-1.html"><strong aria-hidden="true">3.1.</strong> 3-1</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -285,6 +285,27 @@ global  max</li>
 <li><input disabled="" type="checkbox" checked=""/>
 rolling standard deviation</li>
 </ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="1-5-incomplete-data"><a class="header" href="#1-5-incomplete-data">1-5: Incomplete data</a></h1>
+<p>While we might think financial data is well documented, sometimes financial
+data that we want to inspect can be missing from public archives. This lesson
+covers how we can mitigate the consequences of missing financial data.</p>
+<h2 id="pristine-data"><a class="header" href="#pristine-data">Pristine data</a></h2>
+<p>Below is a screenshot from the lecture listing some of the issues with
+incomplete financial data:</p>
+<p><img src="part1/./assets/pristine-data.png" alt="pristine-data" /></p>
+<h2 id="why-data-goes-missing"><a class="header" href="#why-data-goes-missing">Why data goes missing</a></h2>
+<p>From the lecture, some examples are given as to why stocks disappear or appear
+in the data / timeline. Some stocks get acquired by different companies, so
+companies completely go under and are no longer traded, and some stocks appear
+in the middle of the timeline because they are newer. A high-level representation
+from the lecture is provided below:</p>
+<p><img src="part1/./assets/missing-data.png" alt="missing-data" /></p>
+<h2 id="what-can-we-do"><a class="header" href="#what-can-we-do">What can we do?</a></h2>
+<p>Pandas provides us with the ability to <strong>fill forward</strong> and <strong>fill backwards</strong> 
+missing data between two points in time with the last known-good data point.
+It's best practice to <strong>fill forward</strong> first and then <strong>fill backwards</strong>. A
+high-level representation of this concept is from the lecture is provided below:</p>
+<p><img src="part1/./assets/filling.png" alt="filling" /></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="part-2"><a class="header" href="#part-2">Part 2</a></h1>
 <p>The following section contains my notes for Part 2 of the course
 &quot;CS 7646: Machine Learning for Trading&quot;. This section of the course covers

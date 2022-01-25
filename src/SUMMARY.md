@@ -4,6 +4,7 @@
   - [1-2](./part1/1-2.md)
   - [1-3](./part1/1-3.md)
   - [1-4](./part1/1-4.md)
+  - [1-5](./part1/1-5.md)
 - [Part 2](./part2/part2.md)
   - [2-1](./part2/2-1.md)
 - [Part 3](./part3/part3.md)
