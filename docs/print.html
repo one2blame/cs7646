@@ -76,7 +76,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="welcome.html">Welcome</a></li><li class="chapter-item expanded "><a href="part1/part1.html"><strong aria-hidden="true">1.</strong> Part 1</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="part1/1-1.html"><strong aria-hidden="true">1.1.</strong> 1-1</a></li><li class="chapter-item expanded "><a href="part1/1-2.html"><strong aria-hidden="true">1.2.</strong> 1-2</a></li><li class="chapter-item expanded "><a href="part1/1-3.html"><strong aria-hidden="true">1.3.</strong> 1-3</a></li><li class="chapter-item expanded "><a href="part1/1-4.html"><strong aria-hidden="true">1.4.</strong> 1-4</a></li><li class="chapter-item expanded "><a href="part1/1-5.html"><strong aria-hidden="true">1.5.</strong> 1-5</a></li><li class="chapter-item expanded "><a href="part1/1-6.html"><strong aria-hidden="true">1.6.</strong> 1-6</a></li></ol></li><li class="chapter-item expanded "><a href="part2/part2.html"><strong aria-hidden="true">2.</strong> Part 2</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="part2/2-1.html"><strong aria-hidden="true">2.1.</strong> 2-1</a></li></ol></li><li class="chapter-item expanded "><a href="part3/part3.html"><strong aria-hidden="true">3.</strong> Part 3</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="part3/3-1.html"><strong aria-hidden="true">3.1.</strong> 3-1</a></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="welcome.html">Welcome</a></li><li class="chapter-item expanded "><a href="part1/part1.html"><strong aria-hidden="true">1.</strong> Part 1</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="part1/1-1.html"><strong aria-hidden="true">1.1.</strong> 1-1</a></li><li class="chapter-item expanded "><a href="part1/1-2.html"><strong aria-hidden="true">1.2.</strong> 1-2</a></li><li class="chapter-item expanded "><a href="part1/1-3.html"><strong aria-hidden="true">1.3.</strong> 1-3</a></li><li class="chapter-item expanded "><a href="part1/1-4.html"><strong aria-hidden="true">1.4.</strong> 1-4</a></li><li class="chapter-item expanded "><a href="part1/1-5.html"><strong aria-hidden="true">1.5.</strong> 1-5</a></li><li class="chapter-item expanded "><a href="part1/1-6.html"><strong aria-hidden="true">1.6.</strong> 1-6</a></li><li class="chapter-item expanded "><a href="part1/1-7.html"><strong aria-hidden="true">1.7.</strong> 1-7</a></li><li class="chapter-item expanded "><a href="part1/1-8.html"><strong aria-hidden="true">1.8.</strong> 1-8</a></li><li class="chapter-item expanded "><a href="part1/1-9.html"><strong aria-hidden="true">1.9.</strong> 1-9</a></li></ol></li><li class="chapter-item expanded "><a href="part2/part2.html"><strong aria-hidden="true">2.</strong> Part 2</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="part2/2-1.html"><strong aria-hidden="true">2.1.</strong> 2-1</a></li></ol></li><li class="chapter-item expanded "><a href="part3/part3.html"><strong aria-hidden="true">3.</strong> Part 3</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="part3/3-1.html"><strong aria-hidden="true">3.1.</strong> 3-1</a></li><li class="chapter-item expanded "><a href="part3/3-2.html"><strong aria-hidden="true">3.2.</strong> 3-2</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -349,6 +349,119 @@ stock performs on average better than market making stocks like the S&amp;P500.<
 <h2 id="correlation"><a class="header" href="#correlation">Correlation</a></h2>
 <p><strong>Correlation</strong> is a measurement of how close the dots on a scatterplot are to
 the line we've drawn through the scatterplot.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="1-7-sharpe-ratio-and-other-portfolio-statistics"><a class="header" href="#1-7-sharpe-ratio-and-other-portfolio-statistics">1-7: Sharpe ratio and other portfolio statistics</a></h1>
+<p>In this lesson we cover portfolio statistics used in the real world and how to
+calculate and interpret these statistics using Python.</p>
+<h2 id="daily-portfolio-values"><a class="header" href="#daily-portfolio-values">Daily portfolio values</a></h2>
+<p>Given a starting investment amount, allocation percentages to respective stocks,
+and a window in time to conduct calculations, we can calculate the daily value
+of a portfolio over a given period of time.</p>
+<p>Taking the <code>prices</code> dataframe, we can normalize the data and apply a series of
+transforms to arrive at an array of values describing our portfolio's daily
+value over a given period of time. Below is a high-level interpretation of how
+to achieve this outcome given a dataframe:</p>
+<p><img src="part1/./assets/daily-portfolio-value.png" alt="daily-portfolio-value" /></p>
+<h2 id="portfolio-statistics"><a class="header" href="#portfolio-statistics">Portfolio statistics</a></h2>
+<p>Using our new portfolio value array, we can calculate a series of important
+statistics, such as:</p>
+<ul>
+<li>cumulative return</li>
+<li>average daily return</li>
+<li>standard daily return</li>
+<li>sharpe ratio</li>
+</ul>
+<p>A high-level interpretation from the lecture is provided below. This image also
+provides the equations to derive the statistics listed above:</p>
+<p><img src="part1/./assets/portfolio-statistics.png" alt="portfolio-statistics" /></p>
+<h2 id="sharpe-ratio"><a class="header" href="#sharpe-ratio">Sharpe ratio</a></h2>
+<p>The <strong>sharpe ratio</strong> of a portfolio is a statistic that adjusts overall return
+for risk apparent in the portfolio. This is mostly useful when comparing two
+stocks or portfolio wherein one has a greater return but poses a greater risk -
+it allows us to make an informed decision about the riskier of the two stocks.</p>
+<p>A high-level representation of these concepts from the lectures is provided
+below:</p>
+<p><img src="part1/./assets/sharpe-ratio.png" alt="sharpe-ratio" /></p>
+<h2 id="computing-sharpe-ratio"><a class="header" href="#computing-sharpe-ratio">Computing sharpe ratio</a></h2>
+<p>To compute the <strong>sharpe ratio</strong> we need to divide the Expected Value of the
+portfolio returns minus the risk free rate by the standard deviation of the
+portfolio returns minus the risk free rate. The slide from the lectures, below,
+provides possible references for the risk free rate, however, traditionally it's
+been <code>0</code>.</p>
+<p><img src="part1/./assets/computing-sharpe-ratio.png" alt="computing-sharpe-ratio" /></p>
+<h2 id="sharpe-ratio-frequency"><a class="header" href="#sharpe-ratio-frequency">Sharpe ratio frequency</a></h2>
+<p>The <strong>sharpe ratio</strong> can be affected by the frequency in which sampling of the
+portfolio occurs - it was originally intended to be an annual measure. In order
+to acquire the annualized version of the <strong>sharpe ratio</strong>, you multiply the
+<strong>sharpe ratio</strong> result by the constant <code>k</code>. This is calculated by taking the
+square root of the frequency of sampling. The slide from the lecture provides
+more insight into how the <strong>sharpe ratio</strong> is affected by frequency:</p>
+<p><img src="part1/./assets/sharpe-frequency.png" alt="sharpe-frequency" /></p>
+<h2 id="quizzes-3"><a class="header" href="#quizzes-3">Quizzes</a></h2>
+<h3 id="what-is-the-sharpe-ratio"><a class="header" href="#what-is-the-sharpe-ratio">What is the sharpe ratio?</a></h3>
+<p>Below is a quiz from the class providing us with a scenario to calculate the
+sharp ratio with concrete values:</p>
+<p><img src="part1/./assets/quiz-sharpe-ratio.png" alt="quiz-sharpe-ratio" /></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="1-8-optimizers"><a class="header" href="#1-8-optimizers">1-8: Optimizers</a></h1>
+<p>This lesson covers <strong>optimizers</strong>, algorithms that can do the following:</p>
+<ul>
+<li>Find the minimum values of functions</li>
+<li>Build parameterized models based on data</li>
+<li>Refine allocations to stocks in portfolios</li>
+</ul>
+<p>To use an optimizer, we conduct the following steps:</p>
+<ol>
+<li>Provide a function to minimize</li>
+<li>Provide an initial guess of what the minimal outcome is</li>
+<li>Call the optimizer repeatedly until we reach the minimum</li>
+</ol>
+<h2 id="minimization-example"><a class="header" href="#minimization-example">Minimization example</a></h2>
+<p>The following example for minimization is provided by the lecture. The minimizer
+in this example continues to test values for the given equation, tracking the
+minimum value until it reaches the lowest possible number. This algorithm
+rejects values that are high than it's most recent minimum, and continues to
+search for the lowest possible value with greater granularity as it completes
+iterations of the minimization algorithm.</p>
+<p><img src="part1/./assets/minimization-example.png" alt="minimization-example" /></p>
+<h2 id="convex-problems"><a class="header" href="#convex-problems">Convex problems</a></h2>
+<p>When finding the minima of a given equation, we can run into an issue for
+complex equations or <strong>convex problems</strong>. In these problems, the minima can be
+difficult to find for a traditional minimizing algorithm due to the odd shape
+of the equation when graphed. It can have local minima, or portions of the line
+that plateau. Below is a slide from the lecture demonstrating this problem and
+how a minimization algorithm could solve it:</p>
+<p><img src="part1/./assets/convex-problems.png" alt="convex-problems" /></p>
+<h2 id="building-a-parameterized-model"><a class="header" href="#building-a-parameterized-model">Building a parameterized model</a></h2>
+<p>Given a scatterplot like the one shown below from the lecture, a minimizer can
+determine the coefficients for a given equation by minimizing the distance of
+a graphed line (from the equation) to the dots on the scatterplot. This distance
+is known as <strong>error</strong>. The minimizer will attempt to minimize the amount of
+<strong>error</strong>, finding the appropriate coefficients.</p>
+<p><img src="part1/./assets/finding-coefficients.png" alt="finding-coefficients" /></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="1-9-how-to-optimize-a-portfolio"><a class="header" href="#1-9-how-to-optimize-a-portfolio">1-9: How to optimize a portfolio</a></h1>
+<h3 id="what-is-portfolio-optimization"><a class="header" href="#what-is-portfolio-optimization">What is portfolio optimization?</a></h3>
+<p>Given a set of assets and a time period, find an allocation of funds to assets
+that maximizes performance.</p>
+<h3 id="what-is-performance"><a class="header" href="#what-is-performance">What is performance?</a></h3>
+<p>We can choose from a number of statistics such as:</p>
+<ul>
+<li>Cumulative returns</li>
+<li>Volatility or risk</li>
+<li>Risk adjusted returns (Sharpe ratio)</li>
+</ul>
+<h2 id="framing-the-problem"><a class="header" href="#framing-the-problem">Framing the problem</a></h2>
+<p>So how do we go about optimizing a portfolio? We use an optimizer to find the
+inverse Sharpe ratio for a given set of allocations in a portfolio. A high-level
+representation provided by the lecture is provided below:</p>
+<p><img src="part1/./assets/framing-the-problem.png" alt="framing-the-problem" /></p>
+<h2 id="ranges-and-constraints"><a class="header" href="#ranges-and-constraints">Ranges and constraints</a></h2>
+<p><strong>Ranges and constraints</strong> on the values of X provided to the optimizer for the
+function to be minimized can help speed-up the rate at which the optimize can
+solve the minimization of the function. <strong>Ranges</strong> in this case should be
+limited from <code>0</code> to <code>1</code> as these represent percentages. <strong>Constraints</strong> in this
+example specify that the <code>sum(x)</code> should equal <code>100</code> - meaning our allocations
+reach 100% for an effectively optimized portfolio. Below is the slide from the
+lecture discussing this topic:</p>
+<p><img src="part1/./assets/ranges-constraints.png" alt="ranges-constraints" /></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="part-2"><a class="header" href="#part-2">Part 2</a></h1>
 <p>The following section contains my notes for Part 2 of the course
 &quot;CS 7646: Machine Learning for Trading&quot;. This section of the course covers
@@ -358,7 +471,87 @@ computational investing.</p>
 <p>The following section contains my notes for Part 3 of the course
 &quot;CS 7646: Machine Learning for Trading&quot;. This section of the course covers
 various algorithms for trading.</p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="3-1"><a class="header" href="#3-1">3-1</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="3-1-how-machine-learning-is-used-at-a-hedge-fund"><a class="header" href="#3-1-how-machine-learning-is-used-at-a-hedge-fund">3-1: How machine learning is used at a hedge fund</a></h1>
+<h2 id="the-ml-problem"><a class="header" href="#the-ml-problem">The ML problem</a></h2>
+<p>Plenty of hedge funds leverage machine learning models and just plain models
+to make predictions about the market using observation. And this essentially
+what a <strong>model</strong> does, machine learning or not. Provided some <strong>observation</strong>,
+a <strong>model</strong> produces some <strong>prediction</strong>.</p>
+<p>In this course, we'll cover how we can process large amounts of <strong>data</strong>,
+provide it to a <strong>machine learning algorithm</strong> to produce a <strong>model</strong>, and use
+that <strong>model</strong> to make <strong>predictions</strong> from provided <strong>observations</strong>.</p>
+<p><img src="part3/./assets/ml-problem.png" alt="ml-problem" /></p>
+<h2 id="choosing-x-and-y"><a class="header" href="#choosing-x-and-y">Choosing X and Y</a></h2>
+<p>Some examples provided by the course lecture to classify <strong>observations</strong> and
+<strong>predications</strong> are as follows:</p>
+<ul>
+<li>observations
+<ul>
+<li>price momentum</li>
+<li>Bollinger value</li>
+<li>current price</li>
+</ul>
+</li>
+<li>predictions
+<ul>
+<li>future price</li>
+<li>future return</li>
+</ul>
+</li>
+</ul>
+<p><img src="part3/./assets/choosing-x-y.png" alt="choosing-x-y" /></p>
+<h2 id="supervised-regression-learning"><a class="header" href="#supervised-regression-learning">Supervised regression learning</a></h2>
+<p>What's the definition of <strong>supervised regression learning</strong>? <strong>Supervised</strong>
+means we provided an example <strong>observation</strong> and <strong>prediction</strong>. <strong>Regression</strong>
+means the model will be producing some <strong>numerical prediction</strong>. <strong>Learning</strong>
+means we train the model with some data. There are multiple algorithms to
+conduct <strong>supervised regression learning</strong>:</p>
+<ul>
+<li>Linear regression (parametric)
+<ul>
+<li>Leverage data to create parameters and then discards the data</li>
+</ul>
+</li>
+<li>K nearest neighbor (KNN) (instance based)
+<ul>
+<li>Retains historic data and consults the data</li>
+</ul>
+</li>
+<li>Decision trees</li>
+<li>Decision forests</li>
+</ul>
+<p><img src="part3/./assets/supervised-regression-learning.png" alt="supervised-regression-learning" /></p>
+<h2 id="backtesting"><a class="header" href="#backtesting">Backtesting</a></h2>
+<p><strong>Backtesting</strong> is a technique wherein we utilize historical data with our
+machine learning algorithm and subsequent model to make predictions on events
+that have already happened. Using the results of our forecasting, we can make
+determinations as to how accurate our model is and how confident we can be in
+its predictions. Below is a slide from the lectures on this:</p>
+<p><img src="part3/./assets/backtesting.png" alt="backtesting" /></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="3-2-regression"><a class="header" href="#3-2-regression">3-2: Regression</a></h1>
+<p>This lesson covers more in-depth topics for <strong>supervised regression learning</strong>.</p>
+<h2 id="parametric-regression"><a class="header" href="#parametric-regression">Parametric regression</a></h2>
+<p><strong>Parametric regression</strong> leverages <strong>parameters</strong> in a given <strong>model</strong> to
+predict the outcome given some <strong>observations</strong>. In the example provided below,
+<code>x</code> is the observation of barometric pressure, the polynomial equation is the
+model generated by some machine learning algorithm to predict how much it's
+going to rain. The <strong>parameters</strong> in this case are the slope of the line, <code>m</code>,
+and the constant <code>b</code>.</p>
+<p><img src="part3/./assets/parametric-regression.png" alt="parametric-regression" /></p>
+<h2 id="k-nearest-neighbor"><a class="header" href="#k-nearest-neighbor">K nearest neighbor</a></h2>
+<p>We use the value <code>k</code> to select the nearest neighbor(s) for a historical data
+point to make a prediction. The slides from the lecture, below, demonstrate how,
+for a given query, we use this algorithm to select 3 of our nearest neighbors to
+predict the amount of rain given historical data. We take the <strong>mean</strong> of the
+nearest neighbors to generate our prediction.</p>
+<p><img src="part3/./assets/k-nearest-neighbor.png" alt="k-nearest-neighbor" /></p>
+<h2 id="training-and-testing"><a class="header" href="#training-and-testing">Training and testing</a></h2>
+<p>This section of the lecture covers how we treat our data for <strong>training</strong> and
+<strong>testing</strong>. Our <strong>training</strong> data should be separate from our <strong>testing</strong> data.
+The <strong>training</strong> data should be used with some machine learning algorithm,
+parametric or KNN, to generate a model. Once the model is generated, we can then
+use the <strong>testing</strong> data to make predictions.</p>
+<p><img src="part3/./assets/training-testing.png" alt="training-testing" /></p>
 
                     </main>
 
