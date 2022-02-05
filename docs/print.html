@@ -76,7 +76,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="welcome.html">Welcome</a></li><li class="chapter-item expanded "><a href="part1/part1.html"><strong aria-hidden="true">1.</strong> Part 1</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="part1/1-1.html"><strong aria-hidden="true">1.1.</strong> 1-1</a></li><li class="chapter-item expanded "><a href="part1/1-2.html"><strong aria-hidden="true">1.2.</strong> 1-2</a></li><li class="chapter-item expanded "><a href="part1/1-3.html"><strong aria-hidden="true">1.3.</strong> 1-3</a></li><li class="chapter-item expanded "><a href="part1/1-4.html"><strong aria-hidden="true">1.4.</strong> 1-4</a></li><li class="chapter-item expanded "><a href="part1/1-5.html"><strong aria-hidden="true">1.5.</strong> 1-5</a></li><li class="chapter-item expanded "><a href="part1/1-6.html"><strong aria-hidden="true">1.6.</strong> 1-6</a></li><li class="chapter-item expanded "><a href="part1/1-7.html"><strong aria-hidden="true">1.7.</strong> 1-7</a></li><li class="chapter-item expanded "><a href="part1/1-8.html"><strong aria-hidden="true">1.8.</strong> 1-8</a></li><li class="chapter-item expanded "><a href="part1/1-9.html"><strong aria-hidden="true">1.9.</strong> 1-9</a></li></ol></li><li class="chapter-item expanded "><a href="part2/part2.html"><strong aria-hidden="true">2.</strong> Part 2</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="part2/2-1.html"><strong aria-hidden="true">2.1.</strong> 2-1</a></li></ol></li><li class="chapter-item expanded "><a href="part3/part3.html"><strong aria-hidden="true">3.</strong> Part 3</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="part3/3-1.html"><strong aria-hidden="true">3.1.</strong> 3-1</a></li><li class="chapter-item expanded "><a href="part3/3-2.html"><strong aria-hidden="true">3.2.</strong> 3-2</a></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="welcome.html">Welcome</a></li><li class="chapter-item expanded "><a href="part1/part1.html"><strong aria-hidden="true">1.</strong> Part 1</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="part1/1-1.html"><strong aria-hidden="true">1.1.</strong> 1-1</a></li><li class="chapter-item expanded "><a href="part1/1-2.html"><strong aria-hidden="true">1.2.</strong> 1-2</a></li><li class="chapter-item expanded "><a href="part1/1-3.html"><strong aria-hidden="true">1.3.</strong> 1-3</a></li><li class="chapter-item expanded "><a href="part1/1-4.html"><strong aria-hidden="true">1.4.</strong> 1-4</a></li><li class="chapter-item expanded "><a href="part1/1-5.html"><strong aria-hidden="true">1.5.</strong> 1-5</a></li><li class="chapter-item expanded "><a href="part1/1-6.html"><strong aria-hidden="true">1.6.</strong> 1-6</a></li><li class="chapter-item expanded "><a href="part1/1-7.html"><strong aria-hidden="true">1.7.</strong> 1-7</a></li><li class="chapter-item expanded "><a href="part1/1-8.html"><strong aria-hidden="true">1.8.</strong> 1-8</a></li><li class="chapter-item expanded "><a href="part1/1-9.html"><strong aria-hidden="true">1.9.</strong> 1-9</a></li></ol></li><li class="chapter-item expanded "><a href="part2/part2.html"><strong aria-hidden="true">2.</strong> Part 2</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="part2/2-1.html"><strong aria-hidden="true">2.1.</strong> 2-1</a></li></ol></li><li class="chapter-item expanded "><a href="part3/part3.html"><strong aria-hidden="true">3.</strong> Part 3</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="part3/3-1.html"><strong aria-hidden="true">3.1.</strong> 3-1</a></li><li class="chapter-item expanded "><a href="part3/3-2.html"><strong aria-hidden="true">3.2.</strong> 3-2</a></li><li class="chapter-item expanded "><a href="part3/3-3.html"><strong aria-hidden="true">3.3.</strong> 3-3</a></li><li class="chapter-item expanded "><a href="part3/3-4.html"><strong aria-hidden="true">3.4.</strong> 3-4</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -552,6 +552,108 @@ The <strong>training</strong> data should be used with some machine learning alg
 parametric or KNN, to generate a model. Once the model is generated, we can then
 use the <strong>testing</strong> data to make predictions.</p>
 <p><img src="part3/./assets/training-testing.png" alt="training-testing" /></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="3-3-assessing-a-learning-algorithm"><a class="header" href="#3-3-assessing-a-learning-algorithm">3-3: Assessing a learning algorithm</a></h1>
+<h2 id="a-closer-look-at-knn-solutions"><a class="header" href="#a-closer-look-at-knn-solutions">A closer look at KNN solutions</a></h2>
+<p>This section of the lecture just reviews KKN solutions and how trend lines can
+be generated from them by using the KNN algorithm. In the example from the
+lectures below, we see that we're taking the <strong>mean</strong> value for <strong>k</strong> nodes at
+some point <code>x, y</code> and drawing the entry at that location. The greatest drawback
+of this method is that, on the edges, we receive straight lines because of the
+back fill and forward fill of data:</p>
+<p><img src="part3/./assets/closer-look-at-knn.png" alt="closer-look-at-knn" /></p>
+<h2 id="what-happens-as-k-varies"><a class="header" href="#what-happens-as-k-varies">What happens as K varies?</a></h2>
+<p>When <code>k</code> approaches <code>N</code> number of entries, we see that the graph drawn provides
+us less information - it essentially becomes a straight line for some sets of
+data. In contrast, a <code>k</code> value of <code>1</code> provides us with a line that is basically
+discrete. The final question this section in the lecture asks is:
+&quot;As we increase K we are more likely to overfit?&quot;. The answer is <strong>false</strong>,
+as <code>k</code> increases the line drawn fits less of the data.</p>
+<p><img src="part3/./assets/k-variation.png" alt="k-variation" /></p>
+<h2 id="what-happens-as-d-varies"><a class="header" href="#what-happens-as-d-varies">What happens as D varies?</a></h2>
+<p><strong>D</strong> in this case represents a parametric model's number of parameters:
+<code>x1</code>, <code>x2</code>, <code>x3</code>, and so on. This section of the lecture presents the same
+question: &quot;As we increase D are we more likely to overfit?&quot;. The answer is
+<strong>true</strong>, as we increase the number of parameters in a parametric model, the
+line in our graph becomes more complex and fits the data in our dot-graph more
+closely.</p>
+<p><img src="part3/./assets/d-variation.png" alt="d-variation" /></p>
+<h2 id="metric-1-root-mean-squared-error"><a class="header" href="#metric-1-root-mean-squared-error">Metric 1: Root Mean Squared error</a></h2>
+<p>When assessing a learning algorithm, we need to be able to derive some metrics
+from the model's prediction. These metrics provide us with the ability to tune
+our algorithms, and subsequently our models. This section talks about
+<strong>root mean squared (RMS) error</strong>. How this metric is derived is provided by
+the formula in the screenshot, below:</p>
+<p><img src="part3/./assets/rms.png" alt="rms" /></p>
+<h2 id="out-of-sample-error"><a class="header" href="#out-of-sample-error">Out of sample error</a></h2>
+<p><strong>Out of sample error</strong> is the RMS of our model's evaluation of the <strong>test</strong>
+data instead of the training data. A representation of this concept from the
+lecture is provided below:</p>
+<p><img src="part3/./assets/out-of-sample-error.png" alt="out-of-sample-error" /></p>
+<h2 id="cross-validation"><a class="header" href="#cross-validation">Cross validation</a></h2>
+<p>Researchers categorize <strong>trials</strong> for a learning algorithm as the following
+procedure:</p>
+<ul>
+<li>Select a set of data</li>
+<li>Slice the data into train data and test data</li>
+<li>Conduct training on the data marked for training</li>
+<li>Conduct testing on the data marked for testing</li>
+<li>Calculate the RMS error for the model's performance on both the training and
+the testing data</li>
+</ul>
+<p>We conduct <strong>cross validation</strong> by running a series of trials on the same data,
+slicing the data into proportionate chunks and alternating which chunks are
+used for training and which chunks are used for testing. Each alternation of
+testing and training data is considered a trial.</p>
+<p><img src="part3/./assets/cross-validation.png" alt="cross-validation" /></p>
+<h2 id="roll-forward-cross-validation"><a class="header" href="#roll-forward-cross-validation">Roll forward cross validation</a></h2>
+<p><strong>Cross validation</strong> is a useful technique, however, it poses some limitations
+for creating machine learning models for trading. Specifically, it allows the
+model to peek into the future, providing optimistic predictions that aren't
+necessarily useful for trading.</p>
+<p>To avoid this, we ensure that <strong>train</strong> data is, chronologically, always
+<strong>before</strong> the <strong>test</strong> data. This is called <strong>roll forward cross validation</strong>
+and it helps us avoid the issue discussed in the previous paragraph.</p>
+<p><img src="part3/./assets/roll-forward-cross-validation.png" alt="roll-forward-cross-validation" /></p>
+<h2 id="metric-2-correlation"><a class="header" href="#metric-2-correlation">Metric 2: Correlation</a></h2>
+<p>Another metric, <strong>correlation</strong>, provides us with information as to how often
+our predictions are correct in comparison with some test data. Given a set of
+test data, <code>x, y</code> with <code>x</code> being an event and <code>y</code> being the result, our model
+should produce another set of data <code>x, y1</code> where <code>y1</code> is the model's
+prediction.</p>
+<p>To measure <strong>correlation</strong>, we graph <code>y</code> vs <code>y1</code>. Our <strong>correlation</strong> is
+<strong>good</strong> if our resulting graph is linear and increases as <code>y</code> and <code>y1</code>
+increases. Our <strong>correlation</strong> is <strong>bad</strong> if there doesn't seem to be any
+resulting linear graph.</p>
+<p>The <strong>NumPy</strong> method <code>np.corrcoef()</code> provides us with a measure of
+<strong>correlation</strong> for two sets of data with the following ranges:</p>
+<ul>
+<li><code>1</code> denotes that the data is heavily correlated</li>
+<li><code>-1</code> denotes an <strong>inverse</strong> correlation</li>
+<li><code>0</code> denotes no correlation</li>
+<li>The values provided by this method can range between the values of <code>1</code> and
+<code>-1</code>.</li>
+</ul>
+<p><img src="part3/./assets/correlation.png" alt="correlation" /></p>
+<h2 id="overfitting"><a class="header" href="#overfitting">Overfitting</a></h2>
+<p><strong>Overfitting</strong> is a phenomenon wherein our <strong>out of sample error</strong> begins to
+increase as our <strong>degrees of freedom</strong> (the number of a parameters in our
+parametric algorithm) begins to increase. Our <strong>in sample error</strong> decreases to
+<code>0</code> as our degrees <code>D</code> approaches <code>N</code> number of samples. As shown in the
+diagram below, however, on <strong>test</strong> data, due to <strong>overfitting</strong>, our
+<strong>out of sample error</strong> begins to increase as <code>D</code> approaches <code>N</code>.</p>
+<p><img src="part3/./assets/overfitting.png" alt="overfitting" /></p>
+<h2 id="knn-overfitting"><a class="header" href="#knn-overfitting">KNN overfitting</a></h2>
+<p><strong>Overfitting</strong> for KNN algorithms behaves a bit differently. Because a
+KNN-produced line becomes too general as <code>K</code> approaches <code>N</code>, both our
+<strong>out of sample error</strong> and <strong>in sample error</strong> increase as <code>K</code> approaches <code>N</code>.
+The sweet spot for <code>K</code> is somewhere where <strong>out of sample error</strong> decreases
+a significant amount at the cost of <strong>in sample error</strong>.</p>
+<p><img src="part3/./assets/knn-overfitting.png" alt="knn-overfitting" /></p>
+<h2 id="final-considerations"><a class="header" href="#final-considerations">Final considerations</a></h2>
+<p>The following diagram outlines pros and cons of each learning algorithm with
+respect to compute time, query time, etc.</p>
+<p><img src="part3/./assets/final-considerations.png" alt="final-considerations" /></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="3-4"><a class="header" href="#3-4">3-4</a></h1>
 
                     </main>
 
