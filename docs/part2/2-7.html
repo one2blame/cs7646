@@ -1,0 +1,258 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js ayu">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>2-7 - CS 7646: Machine Learning for Trading</title>
+        <!-- Custom HTML head -->
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "ayu" : "ayu";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('ayu')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../welcome.html">Welcome</a></li><li class="chapter-item expanded "><a href="../part1/part1.html"><strong aria-hidden="true">1.</strong> Part 1</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../part1/1-1.html"><strong aria-hidden="true">1.1.</strong> 1-1</a></li><li class="chapter-item expanded "><a href="../part1/1-2.html"><strong aria-hidden="true">1.2.</strong> 1-2</a></li><li class="chapter-item expanded "><a href="../part1/1-3.html"><strong aria-hidden="true">1.3.</strong> 1-3</a></li><li class="chapter-item expanded "><a href="../part1/1-4.html"><strong aria-hidden="true">1.4.</strong> 1-4</a></li><li class="chapter-item expanded "><a href="../part1/1-5.html"><strong aria-hidden="true">1.5.</strong> 1-5</a></li><li class="chapter-item expanded "><a href="../part1/1-6.html"><strong aria-hidden="true">1.6.</strong> 1-6</a></li><li class="chapter-item expanded "><a href="../part1/1-7.html"><strong aria-hidden="true">1.7.</strong> 1-7</a></li><li class="chapter-item expanded "><a href="../part1/1-8.html"><strong aria-hidden="true">1.8.</strong> 1-8</a></li><li class="chapter-item expanded "><a href="../part1/1-9.html"><strong aria-hidden="true">1.9.</strong> 1-9</a></li></ol></li><li class="chapter-item expanded "><a href="../part2/part2.html"><strong aria-hidden="true">2.</strong> Part 2</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../part2/2-1.html"><strong aria-hidden="true">2.1.</strong> 2-1</a></li><li class="chapter-item expanded "><a href="../part2/2-2.html"><strong aria-hidden="true">2.2.</strong> 2-2</a></li><li class="chapter-item expanded "><a href="../part2/2-3.html"><strong aria-hidden="true">2.3.</strong> 2-3</a></li><li class="chapter-item expanded "><a href="../part2/2-4.html"><strong aria-hidden="true">2.4.</strong> 2-4</a></li><li class="chapter-item expanded "><a href="../part2/2-5.html"><strong aria-hidden="true">2.5.</strong> 2-5</a></li><li class="chapter-item expanded "><a href="../part2/2-6.html"><strong aria-hidden="true">2.6.</strong> 2-6</a></li><li class="chapter-item expanded "><a href="../part2/2-7.html" class="active"><strong aria-hidden="true">2.7.</strong> 2-7</a></li><li class="chapter-item expanded "><a href="../part2/2-8.html"><strong aria-hidden="true">2.8.</strong> 2-8</a></li></ol></li><li class="chapter-item expanded "><a href="../part3/part3.html"><strong aria-hidden="true">3.</strong> Part 3</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../part3/3-1.html"><strong aria-hidden="true">3.1.</strong> 3-1</a></li><li class="chapter-item expanded "><a href="../part3/3-2.html"><strong aria-hidden="true">3.2.</strong> 3-2</a></li><li class="chapter-item expanded "><a href="../part3/3-3.html"><strong aria-hidden="true">3.3.</strong> 3-3</a></li><li class="chapter-item expanded "><a href="../part3/3-4.html"><strong aria-hidden="true">3.4.</strong> 3-4</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu (default)</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">CS 7646: Machine Learning for Trading</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="2-7-dealing-with-data"><a class="header" href="#2-7-dealing-with-data">2-7: Dealing with data</a></h1>
+<p>Data is obviously important for computational investing. The core data that we
+work with in this course is historical price and volume data.</p>
+<h2 id="how-data-is-aggregated"><a class="header" href="#how-data-is-aggregated">How data is aggregated</a></h2>
+<p>The unit of measurement for transactions is called a <strong>tick</strong>. These <strong>ticks</strong>
+happen at no particular time, and they can be happening across multiple
+exchanges. For each <strong>tick</strong>, we track the <strong>price</strong> and <strong>volume</strong> of the
+transaction across time. A high-level representation from the lectures is below:</p>
+<p><img src="./assets/data-aggregation.png" alt="data-aggregation" /></p>
+<p>A lot of transactions occur during a trading day, and tracking every single
+<strong>tick</strong> requires a lot of computing and a lot of space to store the data.
+We can aggregate the data by only tracking the price of a specific stock during
+certain <strong>time slices</strong>. For this class, we'll be tracking specific metrics by
+<strong>day</strong>, however, with more computing you could feasibly track metrics with
+smaller time slices. Per time slice, we track the following metrics:</p>
+<ul>
+<li><strong>open</strong> - the first price on the first trade</li>
+<li><strong>high</strong> - the highest trade price during the time slice</li>
+<li><strong>low</strong> - the lowest trade price during the time slice</li>
+<li><strong>close</strong> - the last trade price during the time slice</li>
+<li><strong>volume</strong> - how much of the stock was traded during the time slice</li>
+</ul>
+<p>A high-level overview from the lectures is provided below:</p>
+<p><img src="./assets/time-slicing.png" alt="time-slicing" /></p>
+<h2 id="price-anomaly"><a class="header" href="#price-anomaly">Price anomaly</a></h2>
+<p>A large drop in the price of shares for a given stock is called a
+<strong>price anomaly</strong>. A slide from the lectures is provided below. In this case,
+the stock experienced a <strong>stock split</strong>, cause the price to drop tremendously.</p>
+<p><img src="./assets/price-anomaly.png" alt="price-anomaly" /></p>
+<h2 id="stock-splits"><a class="header" href="#stock-splits">Stock splits</a></h2>
+<p>Why do stocks split? The most common reason is because <strong>the price is too high</strong>
+. Why are high prices a problem? Highly priced stocks cause them to be less
+liquid, making it harder to trade and buy options on the stock. High prices also
+make it difficult to finely tune portfolios, especially if you want to have a
+specific percentage of allocation for one security.</p>
+<p>An issue with <strong>stock splits</strong> is that your machine learning model could mistake
+this large drop in price as an opportunity to short the stock, however, this
+stock isn't actually losing value - more shares are available. This is why
+<strong>adjusted close</strong> was created, allowing us to adjust the <strong>true</strong> price of the
+stock and avoid confusion due to <strong>stock splits</strong>. A slide from the lecture is
+provided below:</p>
+<p><img src="./assets/stock-splits.png" alt="stock-splits" /></p>
+<h2 id="dividends"><a class="header" href="#dividends">Dividends</a></h2>
+<p>Companies pay shareholders <strong>dividends</strong>, usually some percentage of the stock
+price like %1. When conducting computational trading, we'll have to account for
+this as the stock ticks up in price dependent upon the <strong>dividend</strong> expected to
+be paid out. The usual trend for a stock is that the stock rises by the amount
+of the <strong>dividend</strong> the <strong>day before</strong> it is processed. Immediately after that,
+the stock price decreases back to its original value. A slide from the lectures
+is below:</p>
+<p><img src="./assets/dividends.png" alt="dividends" /></p>
+<h2 id="adjusting-for-dividends"><a class="header" href="#adjusting-for-dividends">Adjusting for dividends</a></h2>
+<p>Just like <strong>stock splits</strong>, we can account for <strong>dividends</strong> by using the
+<strong>adjusted close</strong> price with the latest data from an exchange. A lecture from
+the slides demonstrating this is provided below:</p>
+<p><img src="./assets/adjusting-for-dividends.png" alt="adjusting-for-dividends" /></p>
+<h2 id="survivor-bias"><a class="header" href="#survivor-bias">Survivor bias</a></h2>
+<p><strong>Survivor bias</strong> is a built-in bias that we can encounter when analyzing our
+strategy over time using stocks that currently exist today. We assume that our
+strategy works well, but we're using data in the future, not the past. If we
+were to conduct the same strategy in the past, in this case in 2007, we can
+see that <strong>68 stocks</strong> completely plummeted during the 2008 crash, leaving the
+<strong>SP500</strong>. In this case, these stocks did not survive and our strategy
+completely failed.</p>
+<p>We can purchase <strong>survivor bias free data</strong> to conduct analysis of our strategy,
+but this is something we should always keep in mind and avoid. A slide from the
+lectures is provided below:</p>
+<p><img src="./assets/survivor-bias.png" alt="survivor-bias" /></p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../part2/2-6.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                            <a rel="next" href="../part2/2-8.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../part2/2-6.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a rel="next" href="../part2/2-8.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <!-- Livereload script (if served using the cli tool) -->
+        <script type="text/javascript">
+            var socket = new WebSocket("ws://localhost:9000/__livereload");
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload();
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+    </body>
+</html>
