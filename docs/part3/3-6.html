@@ -1,0 +1,264 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js ayu">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Q-learning - CS 7646: Machine Learning for Trading</title>
+        <!-- Custom HTML head -->
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "ayu" : "ayu";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('ayu')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../welcome.html">Welcome</a></li><li class="chapter-item expanded "><a href="../part1/part1.html"><strong aria-hidden="true">1.</strong> Part 1</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../part1/1-1.html"><strong aria-hidden="true">1.1.</strong> Reading and plotting stock data</a></li><li class="chapter-item expanded "><a href="../part1/1-2.html"><strong aria-hidden="true">1.2.</strong> Working with multiple stocks</a></li><li class="chapter-item expanded "><a href="../part1/1-3.html"><strong aria-hidden="true">1.3.</strong> The power of NumPy</a></li><li class="chapter-item expanded "><a href="../part1/1-4.html"><strong aria-hidden="true">1.4.</strong> Statistical analysis of time series</a></li><li class="chapter-item expanded "><a href="../part1/1-5.html"><strong aria-hidden="true">1.5.</strong> Incomplete data</a></li><li class="chapter-item expanded "><a href="../part1/1-6.html"><strong aria-hidden="true">1.6.</strong> Histograms and scatter plots</a></li><li class="chapter-item expanded "><a href="../part1/1-7.html"><strong aria-hidden="true">1.7.</strong> Sharpe ratio and other portfolio statistics</a></li><li class="chapter-item expanded "><a href="../part1/1-8.html"><strong aria-hidden="true">1.8.</strong> Optimizers</a></li><li class="chapter-item expanded "><a href="../part1/1-9.html"><strong aria-hidden="true">1.9.</strong> How to optimize a portfolio</a></li></ol></li><li class="chapter-item expanded "><a href="../part2/part2.html"><strong aria-hidden="true">2.</strong> Part 2</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../part2/2-1.html"><strong aria-hidden="true">2.1.</strong> So you want to be a hedge fund manager?</a></li><li class="chapter-item expanded "><a href="../part2/2-2.html"><strong aria-hidden="true">2.2.</strong> Market mechanics</a></li><li class="chapter-item expanded "><a href="../part2/2-3.html"><strong aria-hidden="true">2.3.</strong> What is a company worth?</a></li><li class="chapter-item expanded "><a href="../part2/2-4.html"><strong aria-hidden="true">2.4.</strong> The capital assets pricing model (CAPM)</a></li><li class="chapter-item expanded "><a href="../part2/2-5.html"><strong aria-hidden="true">2.5.</strong> How hedge funds use the CAPM</a></li><li class="chapter-item expanded "><a href="../part2/2-6.html"><strong aria-hidden="true">2.6.</strong> Technical analysis</a></li><li class="chapter-item expanded "><a href="../part2/2-7.html"><strong aria-hidden="true">2.7.</strong> Dealing with data</a></li><li class="chapter-item expanded "><a href="../part2/2-8.html"><strong aria-hidden="true">2.8.</strong> Efficient markets hypothesis</a></li><li class="chapter-item expanded "><a href="../part2/2-9.html"><strong aria-hidden="true">2.9.</strong> The fundamental law of active portfolio management</a></li><li class="chapter-item expanded "><a href="../part2/2-10.html"><strong aria-hidden="true">2.10.</strong> Portfolio optimization and the efficient frontier</a></li></ol></li><li class="chapter-item expanded "><a href="../part3/part3.html"><strong aria-hidden="true">3.</strong> Part 3</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../part3/3-1.html"><strong aria-hidden="true">3.1.</strong> How machine learning is used at a hedge fund</a></li><li class="chapter-item expanded "><a href="../part3/3-2.html"><strong aria-hidden="true">3.2.</strong> Regression</a></li><li class="chapter-item expanded "><a href="../part3/3-3.html"><strong aria-hidden="true">3.3.</strong> Assessing a learning algorithm</a></li><li class="chapter-item expanded "><a href="../part3/3-4.html"><strong aria-hidden="true">3.4.</strong> Ensemble learners - bagging and boosting</a></li><li class="chapter-item expanded "><a href="../part3/3-5.html"><strong aria-hidden="true">3.5.</strong> Reinforcement learning</a></li><li class="chapter-item expanded "><a href="../part3/3-6.html" class="active"><strong aria-hidden="true">3.6.</strong> Q-learning</a></li><li class="chapter-item expanded "><a href="../part3/3-7.html"><strong aria-hidden="true">3.7.</strong> Dyna</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu (default)</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">CS 7646: Machine Learning for Trading</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="3-6-q-learning"><a class="header" href="#3-6-q-learning">3-6: Q-learning</a></h1>
+<p>Q-learning is a <strong>model-less</strong> approach. It does not care about or use models of
+<strong>transition functions</strong> like <strong>T</strong> or <strong>rewards functions</strong> like <strong>R</strong>.
+Q-learning builds a table of utility values, or Q-values, at each step to select
+the best action based on what it has learned so far. The best thing about
+Q-learning is it is <strong>guaranteed to provide an optimal policy</strong>.</p>
+<h2 id="what-is-q"><a class="header" href="#what-is-q">What is Q?</a></h2>
+<p><strong>Q</strong> is similar to the other functions like <strong>T</strong> and <strong>R</strong>, however, it
+represents the <strong>immediate reward</strong> and <strong>discounted reward</strong> for an action
+taken in a specific state. <strong>Q</strong> is not greedy, and considers the discounted
+reward - so what happens today and tomorrow.</p>
+<p>We use <strong>Q</strong> to generate a policy, <strong>pi</strong>, by finding the maximized argument
+value for <strong>action</strong> to maximize the <strong>Q</strong> value. Eventually, we'll have an
+optimal policy.</p>
+<p><img src="./assets/what-is-q.png" alt="what-is-q" /></p>
+<h2 id="q-learning-procedure"><a class="header" href="#q-learning-procedure">Q-learning procedure</a></h2>
+<p>A series of things occurs when training our Q-learning model and generating our
+Q table:</p>
+<ul>
+<li>First, we select our training data</li>
+<li>We iterate over this time-series data
+<ul>
+<li>We set a start time and initialize our Q table</li>
+<li>We compute the starting state <strong>S</strong> given the inputs</li>
+<li>We select our action <strong>A</strong></li>
+<li>We observe our end state <strong>S'</strong> and our reward</li>
+<li>We update <strong>Q</strong> based on the outcomes</li>
+</ul>
+</li>
+<li>Once we've generated our Q table, we test the policy, <strong>pi</strong> against testing
+data</li>
+<li>Finally, we repeat until convergence, resulting in no further improvements</li>
+</ul>
+<p>A high-level overview of these concepts is provided below:</p>
+<p><img src="./assets/q-learning-procedure.png" alt="q-learning-procedure" /></p>
+<h2 id="update-rule"><a class="header" href="#update-rule">Update rule</a></h2>
+<p>One of the most important parts of Q-learning is the update rule. We can break
+it down into simpler terms wherein our new Q table, <strong>Q prime</strong>, is equal to
+our old Q table times 1 minus <strong>alpha</strong>, the learning rate, plus <strong>alpha</strong>
+times our <strong>reward</strong> plus <strong>gamma</strong> times the Q table value derived from
+<strong>alpha prime</strong> of our next decision to reach <strong>S prime</strong>. The writeup for the
+update rule equation is provided in the lecture slide below:</p>
+<p><img src="./assets/update-rule.png" alt="update-rule" /></p>
+<h2 id="two-finer-points"><a class="header" href="#two-finer-points">Two finer points</a></h2>
+<p>Q-learning is successful when we explore, and we can do that by taking random
+actions. We can choose random actions with probability of <strong>C</strong>. So as we begin
+to learn, we start out with <strong>C</strong>'s probability of us choosing a random action
+to be pretty high. As we begin to learn more, our actions become less random.</p>
+<p><img src="./assets/two-finer-points.png" alt="two-finer-points" /></p>
+<h2 id="actions"><a class="header" href="#actions">Actions</a></h2>
+<p>For our stock trading Q-learner, the following are some actions that can be
+taken to transition to different states:</p>
+<ul>
+<li><strong>Buy</strong></li>
+<li><strong>Sell</strong></li>
+<li><strong>Nothing</strong></li>
+</ul>
+<p>Below is an example from the lectures:</p>
+<p><img src="./assets/actions.png" alt="actions" /></p>
+<h2 id="rewards"><a class="header" href="#rewards">Rewards</a></h2>
+<p><strong>Daily returns</strong> for a reward signal to the Q-learner allows the learner to
+converge must faster than a cumulative return.</p>
+<p><img src="./assets/rewards.png" alt="rewards" /></p>
+<h2 id="state"><a class="header" href="#state">State</a></h2>
+<p>Below are some good factors for <strong>state</strong> to be used during Q-learning:</p>
+<p><img src="./assets/state.png" alt="state" /></p>
+<h2 id="creating-the-state"><a class="header" href="#creating-the-state">Creating the state</a></h2>
+<p>In order for us to create the state, we have to translate all of our factors
+into <strong>discrete integers</strong>. Some algorithm will conduct this, and then we'll
+finally combine our factors into one number. Below is a lecture from the slides:</p>
+<p><img src="./assets/creating-the-state.png" alt="creating-the-state" /></p>
+<h3 id="discretizing"><a class="header" href="#discretizing">Discretizing</a></h3>
+<p>Below is a quick breakdown from the lecture on how to discretize our data:</p>
+<p><img src="./assets/discretizing.png" alt="discretizing" /></p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../part3/3-5.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                            <a rel="next" href="../part3/3-7.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../part3/3-5.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a rel="next" href="../part3/3-7.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <!-- Livereload script (if served using the cli tool) -->
+        <script type="text/javascript">
+            var socket = new WebSocket("ws://localhost:9000/__livereload");
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload();
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+    </body>
+</html>
