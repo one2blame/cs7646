@@ -1,0 +1,24 @@
+[submodule "cs7646-pr1"]
+	path = cs7646-pr1
+	url = ../cs7646-pr1
+[submodule "cs7646-pr2"]
+	path = cs7646-pr2
+	url = ../cs7646-pr2
+[submodule "cs7646-pr3"]
+	path = cs7646-pr3
+	url = ../cs7646-pr3
+[submodule "cs7646-pr4"]
+	path = cs7646-pr4
+	url = ../cs7646-pr4
+[submodule "cs7646-pr5"]
+	path = cs7646-pr5
+	url = ../cs7646-pr5
+[submodule "cs7646-pr6"]
+	path = cs7646-pr6
+	url = ../cs7646-pr6
+[submodule "cs7646-pr7"]
+	path = cs7646-pr7
+	url = ../cs7646-pr7
+[submodule "cs7646-pr8"]
+	path = cs7646-pr8
+	url = ../cs7646-pr8
